@@ -147,7 +147,7 @@ function RestaurantCards(){
     console.log(index)
   };
 
-  const selectedColor = "rgb(196, 83, 0)";
+  const selectedColor = "rgb(210, 169, 29)";
   const wfColor = "rgb(70,62,188)"
   const numSelected = selected.filter((s) =>s).length;
 

@@ -49,7 +49,7 @@ function ResturantCard(props: ResturantCardProps) {
               alignItems: "center",
               flexDirection: "column",
             }}> 
-            <StarRating rating={props.rating}/>
+            <StarRating rating={props.rating} colorString={props.borderColor}/>
           </Grid>
             <Grid item xs={12} sx={{
               display: "flex",
