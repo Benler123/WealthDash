@@ -9,33 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.20",
-    "@mui/material": "^5.15.20",
-||||||| 18873f3
-=======
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.20",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.12",
     "lucide-react": "^0.396.0",
->>>>>>> origin/main
     "next": "14.2.4",
     "react": "^18",
-<<<<<<< HEAD
-    "react-dom": "^18",
-    "react-icons": "^5.2.1"
-||||||| 18873f3
-    "react-dom": "^18"
-=======
     "react-dom": "^18",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
->>>>>>> origin/main
   },
   "devDependencies": {
     "@types/node": "^20",
