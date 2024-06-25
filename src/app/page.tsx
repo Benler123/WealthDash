@@ -5,6 +5,7 @@ import React, { useState } from "react"
 import exp from "constants"
 import ResturantCards from "./ResturantCards"
 import ResturantCard from "./components/ResturantCard"
+// import RestaurantCard from "@/components/RestaurantCard";
 
 export default function Home() {
   const [expand, setExpand] = useState(false)
@@ -18,49 +19,7 @@ export default function Home() {
           Week of:{" "}
         </div>
       </div>
-      <div className="flex flex-col justify-between h-[24em]">
-        <div className="flex flex-row h-24 w-full justify-between">
-          <div
-            className={`transition ease-in-out w-24 bg-slate-600 ${expand && "translate-x-[88.5em] translate-y-[18em]"}`}
-          ></div>
-          <div
-            className={`transition ease-in-out w-24 bg-slate-600 ${expand && "translate-x-[70.8em] translate-y-[18em]"}`}
-          ></div>
-          <div
-            className={`transition ease-in-out w-24 bg-slate-600 ${expand && "translate-x-[53.1em] translate-y-[18em]"}`}
-          ></div>
-          <div
-            className={`transition ease-in-out w-24 bg-slate-600 ${expand && "translate-x-[35.4em] translate-y-[18em]"}`}
-          ></div>
-          <div
-            className={`transition ease-in-out w-24 bg-slate-600 ${expand && "translate-x-[17.7em] translate-y-[18em]"}`}
-          ></div>
-          <div
-            className="w-24 bg-indigo-500 text-5xl"
-            onClick={() => setExpand(!expand)}
-          >
-            <CachedIcon fontSize="inherit" />
-          </div>
-        </div>
-        <div className="flex flex-row h-24 w-full justify-between">
-          <div
-            className={`transition ease-in-out w-24 bg-slate-600 ${expand && "translate-x-[88.5em]"}`}
-          ></div>
-          <div
-            className={`transition ease-in-out w-24 bg-slate-600 ${expand && "translate-x-[70.8em]"}`}
-          ></div>
-          <div
-            className={`transition ease-in-out w-24 bg-slate-600 ${expand && "translate-x-[53.1em]"}`}
-          ></div>
-          <div
-            className={`transition ease-in-out w-24 bg-slate-600 ${expand && "translate-x-[35.4em]"}`}
-          ></div>
-          <div
-            className={`transition ease-in-out w-24 bg-slate-600 ${expand && "translate-x-[17.7em]"}`}
-          ></div>
-          <div className="w-24 bg-indigo-500"></div>
-        </div>
-      </div>
+      <ResturantCards />
     </main>
   )
 }
