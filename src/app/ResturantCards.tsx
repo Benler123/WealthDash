@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component, act, useState } from 'react';
 import ResturantCard from './components/ResturantCard';
 import CachedIcon from '@mui/icons-material/Cached';
 import { IntegerType } from 'mongodb';
@@ -13,77 +13,70 @@ function RestaurantCards(){
     // call getActiveRestaurants()
     const activeRestaurants = [
         {
-            "restaurantId": "popeyes",
+            "restaurantId": "1",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
             "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
         },
         {
-            "restaurantId": "popeyes",
+            "restaurantId": "2",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
             "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
         },
         {
-            "restaurantId": "popeyes",
+            "restaurantId": "3",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
             "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
         },
         {
-            "restaurantId": "popeyes",
+            "restaurantId": "4",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
             "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
         },
         {
-            "restaurantId": "popeyes",
+            "restaurantId": "5",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
             "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
         },
         {
-            "restaurantId": "popeyes",
+            "restaurantId": "6",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
             "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
         },
         {
-            "restaurantId": "popeyes",
+            "restaurantId": "7",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
             "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
         },
         {
-            "restaurantId": "popeyes",
+            "restaurantId": "8",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
             "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
         },
         {
-            "restaurantId": "popeyes",
+            "restaurantId": "9",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
             "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
         },
         {
-            "restaurantId": "popeyes",
-            "name": "popeyes",
-            "categories": ["Jamaican"],
-            "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
-        },
-        {
-            "restaurantId": "popeyes",
+            "restaurantId": "10",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
@@ -91,22 +84,30 @@ function RestaurantCards(){
         }
     ]
 
-    const [expand, setExpand] = useState(true);
-  const [selected, setSelected] = useState(new Array(activeRestaurants.length).fill(false));
+  const [expand, setExpand] = useState(true);
+  let dic: { [key: string]: boolean } = {};
+  activeRestaurants.forEach(activeRestaurant => {
+    dic[activeRestaurant["restaurantId"]] = false;
+  })
 
-  const toggleSelection = (index: number) => {
-    if (selected.filter((s) => s).length === 5 && !selected[index]) {
-      return;
-    }
-    const newSelected = [...selected];
-    newSelected[index] = !newSelected[index];
-    setSelected(newSelected);
-    console.log(index)
+  const [selected, setSelected] = useState(dic);
+
+  const toggleSelection = (restaurantId: string) => {
+    const newSelected = {...selected};
+    newSelected[restaurantId] = !newSelected[restaurantId]
+    console.log(restaurantId)
+    setSelected(newSelected)
   };
+
+  const sendSelection = (selected: { [key: string]: boolean}) => {
+    const restaurantIds = Object.keys(selected).filter(key => selected[key]);
+    // /api/vote {"restaurantIds": restaurant}
+    console.log(restaurantIds)
+  }
 
   const selectedColor = "rgb(210, 169, 29)";
   const wfColor = "rgb(70,62,188)"
-  const numSelected = selected.filter((s) =>s).length;
+  const numSelected = Object.values(selected).filter(value => value).length;
 
   const [open, setOpen] = React.useState(false);
 
@@ -115,7 +116,10 @@ function RestaurantCards(){
     setOpen(true);
   };
 
-  const handleClose = () => {
+  const handleClose = (send:boolean) => {
+    if (send) {
+        sendSelection(selected);
+    }
     setOpen(false);
   };
 
@@ -123,9 +127,9 @@ function RestaurantCards(){
       <div className="flex w-full justify-between flex-col">
           <div className="flex w-full pb-4">
               {
-                  activeRestaurants.slice(0,5).map((resturant, index) => (
-                      <div onClick={()=>toggleSelection(index)} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[index]) && `translate-x-[100em] translate-y-[18em]`}`}>
-                      <ResturantCard key={index} name={resturant["name"]} imagePath={resturant["photoSrc"]} rating={resturant["starRating"]} cuisine={resturant["categories"][0]} borderColor={selected[index]? selectedColor: wfColor}/>
+                  activeRestaurants.slice(0,5).map((activeRestaurant, index) => (
+                      <div onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && `translate-x-[100em] translate-y-[18em]`}`}>
+                      <ResturantCard key={index} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"][0]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
                       </div>
                   ))
               }
@@ -133,9 +137,9 @@ function RestaurantCards(){
           </div>
           <div className="flex w-full">
             {
-                  activeRestaurants.slice(5,10).map((resturant, index) => (
-                      <div  onClick={()=>toggleSelection(index + 5)} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[index + 5]) && `translate-x-[100em]`}`}>
-                        <ResturantCard key={index + 5} name={resturant["name"]} imagePath={resturant["photoSrc"]} rating={resturant["starRating"]} cuisine={resturant["categories"][0]} borderColor={selected[index + 5]? selectedColor: wfColor}/>
+                  activeRestaurants.slice(5,10).map((activeRestaurant, index) => (
+                      <div  onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && `translate-x-[100em]`}`}>
+                        <ResturantCard key={index + 5} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"][0]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
                       </div>
                   ))
               }  
