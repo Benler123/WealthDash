@@ -32,7 +32,7 @@ export default class ResturantCard extends Component {
               alignItems: "center",
               flexDirection: "column",
             }}> 
-            <StarRating rating={3.2}/>
+            <StarRating rating={3.4}/>
           </Grid>
             <Grid item xs={12} sx={{
               display: "flex",
