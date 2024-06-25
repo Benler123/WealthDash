@@ -4,6 +4,86 @@ import CachedIcon from '@mui/icons-material/Cached';
 import { IntegerType } from 'mongodb';
 
 function RestaurantCards(){    
+    // call getActiveRestaurants()
+    const activeRestaurants = [
+        {
+            "restaurantId": "popeyes",
+            "name": "popeyes",
+            "categories": ["Jamaican"],
+            "starRating": 3.5,
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+        },
+        {
+            "restaurantId": "popeyes",
+            "name": "popeyes",
+            "categories": ["Jamaican"],
+            "starRating": 3.5,
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+        },
+        {
+            "restaurantId": "popeyes",
+            "name": "popeyes",
+            "categories": ["Jamaican"],
+            "starRating": 3.5,
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+        },
+        {
+            "restaurantId": "popeyes",
+            "name": "popeyes",
+            "categories": ["Jamaican"],
+            "starRating": 3.5,
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+        },
+        {
+            "restaurantId": "popeyes",
+            "name": "popeyes",
+            "categories": ["Jamaican"],
+            "starRating": 3.5,
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+        },
+        {
+            "restaurantId": "popeyes",
+            "name": "popeyes",
+            "categories": ["Jamaican"],
+            "starRating": 3.5,
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+        },
+        {
+            "restaurantId": "popeyes",
+            "name": "popeyes",
+            "categories": ["Jamaican"],
+            "starRating": 3.5,
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+        },
+        {
+            "restaurantId": "popeyes",
+            "name": "popeyes",
+            "categories": ["Jamaican"],
+            "starRating": 3.5,
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+        },
+        {
+            "restaurantId": "popeyes",
+            "name": "popeyes",
+            "categories": ["Jamaican"],
+            "starRating": 3.5,
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+        },
+        {
+            "restaurantId": "popeyes",
+            "name": "popeyes",
+            "categories": ["Jamaican"],
+            "starRating": 3.5,
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+        },
+        {
+            "restaurantId": "popeyes",
+            "name": "popeyes",
+            "categories": ["Jamaican"],
+            "starRating": 3.5,
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+        }
+    ]
     const resturants = [
         "McDonalds",
         "Burger King",
@@ -75,18 +155,18 @@ function RestaurantCards(){
 <div className="flex w-full justify-between flex-col">
     <div className="flex w-full pb-4">
         {
-            resturants.slice(0,5).map((resturant, index) => (
+            activeRestaurants.slice(0,5).map((activeRestaurant, index) => (
                  <div onClick={()=>toggleSelection(index)} className={`transition ease-in-out w-auto ${expand && `translate-x-[100em] translate-y-[18em]`}`}>
-                <ResturantCard key={index} name={resturant} imagePath={images[index]} rating={ratings[index]} cuisine={cuisines[index]} borderColor={selected[index]? selectedColor: wfColor}/>
+                <ResturantCard key={index} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"][0]} borderColor={selected[index]? selectedColor: wfColor}/>
                 </div>
             ))
         }
         {expand ? <div className="w-24 bg-indigo-500 text-3xl" onClick={() => setExpand(!expand)}>SUBMIT</div> : <div className="w-24 bg-indigo-500 text-5xl" onClick={() => setExpand(!expand)}>DRAW CARDS</div>}
     </div>
     <div className="flex w-full">{
-            resturants.slice(5,10).map((resturant, index) => (
+            activeRestaurants.slice(5,10).map((activeRestaurant, index) => (
                 <div  onClick={()=>toggleSelection(index + 5)} className={`transition ease-in-out w-auto ${expand && `translate-x-[100em]`}`}>
-                <ResturantCard key={index} name={resturant} imagePath={images[index + 5]} rating={ratings[index + 5]} cuisine={cuisines[index + 5]} borderColor={selected[index + 5]? selectedColor: wfColor}/>
+                <ResturantCard key={index} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"][0]} borderColor={selected[index]? selectedColor: wfColor}/>
                 </div>
             ))
         }  
