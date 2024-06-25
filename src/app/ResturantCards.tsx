@@ -8,6 +8,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 function RestaurantCards(){    
     // call getActiveRestaurants()
@@ -133,7 +134,19 @@ function RestaurantCards(){
                       </div>
                   ))
               }
-              <div className="mt-[15em]">{!expand ? <div className="w-24 bg-indigo-500 text-3xl" onClick={() => handleClickOpen()}>SUBMIT</div> : <div className="w-24 bg-indigo-500 text-3xl" onClick={() => setExpand(!expand)}>DRAW CARDS</div>}</div>
+              <div className="mt-[15em] ml-[2gem]">
+                {!expand ? 
+                <div>
+                    <button onClick={handleClickOpen}>
+                        <ArrowCircleRightIcon style={{ width: '60px', height: '60px' }} />
+                    </button>
+                    </div> :
+                 <div>
+                    <button onClick={() => setExpand(!expand)}>
+                        <img style={{ width: '60px', height: '60px' }} src="drawCard.svg"/>
+                    </button>
+                    </div>}
+                </div>
           </div>
           <div className="flex w-full">
             {
