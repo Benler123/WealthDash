@@ -10,7 +10,7 @@ interface ResturantCardProps {
   imagePath: string;
   rating: number;
   borderColor: string;
-  cuisine: string;
+  cuisine: string[];
 }
 
 function ResturantCard(props: ResturantCardProps) {
@@ -58,9 +58,15 @@ function ResturantCard(props: ResturantCardProps) {
                 alignItems: "center",
                 flexDirection: "column",
               }}> 
-            <div style={{ fontWeight:'bold', fontFamily: 'Inter, sans-serif', backgroundColor: 'lightgray', borderRadius: '8px', padding: '8px' }}>
-              {props.cuisine}
+            <div className="flex flex-row" style={{ fontFamily: 'Inter, sans-serif', fontWeight:'bold' }}>
+          {props.cuisine.map((cuisine, index) => (
+            <div className="p-1">
+              <div key={index} style={{backgroundColor: 'lightgray', borderRadius: '10px', padding: '2px' }}>
+                {cuisine}
+              </div>
             </div>
+          ))}
+          </div>
           </Grid>
         </Grid>
           

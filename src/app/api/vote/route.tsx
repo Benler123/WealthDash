@@ -20,7 +20,6 @@ export async function GET() {
         {
           $project: {
             _id: 0,
-            restaurantId: 1,
             name: 1,
             numVotes: 1
           }
@@ -40,14 +39,14 @@ export async function GET() {
 /* Increments numVotes of the specified restaurants by 1 */
 export async function POST(request: Request) {
   try {
-    const { restaurantIds } = await request.json()
+    const { restaurantNames } = await request.json()
     const client = await clientPromise
     const db = client.db("miriamdash")
     const result = await db
       .collection("restaurants")
       .updateMany(
-        { restaurantId: { $in: restaurantIds } },
-        { $inc: { numVotes: 1 } }
+        { name: { $in: restaurantNames } },
+        { $inc: { numVotes: 1, totalVotes: 1 } }
       )
 
     if (result.matchedCount === 0) {
