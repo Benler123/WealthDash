@@ -41,7 +41,7 @@ function ResturantCard(props: ResturantCardProps) {
               alignItems: "center",
               flexDirection: "column",
             }}> 
-          <img src={props.imagePath} style={{ border: `2px solid  ${props.borderColor}` ,maxWidth: '100%', height: 'auto', objectFit: 'contain' }}/>         
+          <img src={props.imagePath} style={{maxWidth: '100%', height: 'auto', objectFit: 'contain' }}/>         
            </Grid>
           <Grid item xs={12} sx={{
               display: "flex",
