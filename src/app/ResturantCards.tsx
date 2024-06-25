@@ -16,7 +16,7 @@ function RestaurantCards(){
         {
             "restaurantId": "1",
             "name": "popeyes",
-            "categories": ["Jamaican"],
+            "categories": ["Jamaican", "Fast Food"],
             "starRating": 3.5,
             "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
         },
@@ -132,7 +132,7 @@ function RestaurantCards(){
               {
                   activeRestaurants.slice(0,5).map((activeRestaurant, index) => (
                       <div onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && `translate-x-[100em] translate-y-[18em]`}`}>
-                      <ResturantCard key={index} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"][0]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
+                      <ResturantCard key={index} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
                       </div>
                   ))
               }
@@ -154,7 +154,7 @@ function RestaurantCards(){
             {
                   activeRestaurants.slice(5,10).map((activeRestaurant, index) => (
                       <div  onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && `translate-x-[100em]`}`}>
-                        <ResturantCard key={index + 5} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"][0]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
+                        <ResturantCard key={index + 5} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
                       </div>
                   ))
               }  
