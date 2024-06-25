@@ -8,6 +8,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 function RestaurantCards(){    
     // call getActiveRestaurants()
@@ -111,6 +112,8 @@ function RestaurantCards(){
 
   const [open, setOpen] = React.useState(false);
 
+  const [open2, setOpen2] = React.useState(false);
+
   const handleClickOpen = () => {
     setExpand(!expand);
     setOpen(true);
@@ -120,7 +123,7 @@ function RestaurantCards(){
     if (send) {
         sendSelection(selected);
     }
-    setOpen(false);
+    setOpen2(true);
   };
 
     return (
@@ -133,7 +136,19 @@ function RestaurantCards(){
                       </div>
                   ))
               }
-              <div className="mt-[15em]">{!expand ? <div className="w-24 bg-indigo-500 text-3xl" onClick={() => handleClickOpen()}>SUBMIT</div> : <div className="w-24 bg-indigo-500 text-3xl" onClick={() => setExpand(!expand)}>DRAW CARDS</div>}</div>
+              <div className="mt-[15em] ml-[2gem]">
+                {!expand ? 
+                <div>
+                    <button onClick={handleClickOpen}>
+                        <ArrowCircleRightIcon style={{ width: '60px', height: '60px' }} />
+                    </button>
+                    </div> :
+                 <div>
+                    <button onClick={() => setExpand(!expand)}>
+                        <img style={{ width: '60px', height: '60px' }} src="drawCard.svg"/>
+                    </button>
+                    </div>}
+                </div>
           </div>
           <div className="flex w-full">
             {
@@ -148,14 +163,21 @@ function RestaurantCards(){
           <Dialog
             open={open}
             keepMounted
-            onClose={handleClose}
             aria-describedby="alert-dialog-slide-description"
           >
             <DialogTitle>{"Confirm"}</DialogTitle>
             <DialogActions>
-              <Button onClick={handleClose}>No</Button>
+              <Button onClick={() => setOpen(false)}>No</Button>
               <Button onClick={handleClose}>Yes</Button>
             </DialogActions>
+          </Dialog>
+
+          <Dialog
+            open={open2}
+            keepMounted
+            aria-describedby="alert-dialog-slide-description"
+          >
+            <DialogTitle>{"SUBMITTED"}</DialogTitle>
           </Dialog>
       </div>
 
