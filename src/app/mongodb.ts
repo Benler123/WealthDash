@@ -1,14 +1,18 @@
-const { MongoClient } = require("mongodb")
+import { MongoClient } from "mongodb"
 
 if (!process.env.MONGODB_URI) {
   throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
 }
 
-const uri = process.env.MONGODB_URI
-const options = {}
+const uri: string = process.env.MONGODB_URI
+const options: object = {}
 
-let client
-let clientPromise
+let client: MongoClient
+let clientPromise: Promise<MongoClient>
+
+declare global {
+  var _mongoClientPromise: Promise<MongoClient> | undefined
+}
 
 if (process.env.NODE_ENV === "development") {
   // In development mode, use a global variable so that the value
@@ -27,4 +31,4 @@ if (process.env.NODE_ENV === "development") {
 
 // Export a module-scoped MongoClient promise. By doing this in a
 // separate module, the client can be shared across functions.
-module.exports = clientPromise
+export default clientPromise
