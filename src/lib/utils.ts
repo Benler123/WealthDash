@@ -26,11 +26,11 @@ export async function getActiveRestaurants() {
         {
           $project: {
             _id: 0,
-            restaurantId: 1,
             name: 1,
             categories: 1,
             starRating: 1,
-            photoSrc: 1
+            photoUrl: 1,
+            yelpUrl: 1
           }
         }
       ])
