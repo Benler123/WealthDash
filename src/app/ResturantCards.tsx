@@ -132,6 +132,19 @@ function RestaurantCards() {
     setOpen(true)
   }
 
+  const translations = [
+    "translate-x-[87.5em] translate-y-[24.5em]",
+    "translate-x-[70em] translate-y-[24.5em]",
+    "translate-x-[52.5em] translate-y-[24.5em]",
+    "translate-x-[35em] translate-y-[24.5em]",
+    "translate-x-[17.5em] translate-y-[24.5em]",
+    "translate-x-[87.5em]",
+    "translate-x-[70em]",
+    "translate-x-[52.5em]",
+    "translate-x-[35em]",
+    "translate-x-[17.5em]"
+  ]
+
   const handleClose = (send: boolean) => {
     if (send) {
       sendSelection(selected)
@@ -145,14 +158,14 @@ function RestaurantCards() {
         {activeRestaurants.slice(0, 5).map((activeRestaurant, index) => (
           <div
             onClick={() => toggleSelection(activeRestaurant["restaurantId"])}
-            className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["restaurantId"]] && `translate-x-[100em] translate-y-[18em]`}`}
+            className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["restaurantId"]] && translations[index]}`}
           >
             <ResturantCard
               key={index}
               name={activeRestaurant["name"]}
               imagePath={activeRestaurant["photoSrc"]}
               rating={activeRestaurant["starRating"]}
-              cuisine={activeRestaurant["categories"][0]}
+              cuisine={activeRestaurant["categories"]}
               borderColor={
                 selected[activeRestaurant["restaurantId"]]
                   ? selectedColor
@@ -186,14 +199,14 @@ function RestaurantCards() {
         {activeRestaurants.slice(5, 10).map((activeRestaurant, index) => (
           <div
             onClick={() => toggleSelection(activeRestaurant["restaurantId"])}
-            className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["restaurantId"]] && `translate-x-[100em]`}`}
+            className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["restaurantId"]] && translations[index + 5]}`}
           >
             <ResturantCard
               key={index + 5}
               name={activeRestaurant["name"]}
               imagePath={activeRestaurant["photoSrc"]}
               rating={activeRestaurant["starRating"]}
-              cuisine={activeRestaurant["categories"][0]}
+              cuisine={activeRestaurant["categories"]}
               borderColor={
                 selected[activeRestaurant["restaurantId"]]
                   ? selectedColor
@@ -202,6 +215,9 @@ function RestaurantCards() {
             />
           </div>
         ))}
+        <div onClick={() => toggleSelection("1")} className={"z-10"}>
+          <Deck />
+        </div>
       </div>
 
       <Dialog
