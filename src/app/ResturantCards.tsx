@@ -1,5 +1,6 @@
 import React, { Component, act, useState } from 'react';
 import ResturantCard from './components/ResturantCard';
+import Deck from './components/Deck';
 import CachedIcon from '@mui/icons-material/Cached';
 import { IntegerType } from 'mongodb';
 import Dialog from '@mui/material/Dialog';
@@ -18,71 +19,83 @@ function RestaurantCards(){
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "pos": 0
         },
         {
             "restaurantId": "2",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "pos": 1
         },
         {
             "restaurantId": "3",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "pos": 2
         },
         {
             "restaurantId": "4",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "pos": 3
         },
         {
             "restaurantId": "5",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "pos": 4
         },
         {
             "restaurantId": "6",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "pos": 5
         },
         {
             "restaurantId": "7",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "pos": 6
         },
         {
             "restaurantId": "8",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "pos": 7
         },
         {
             "restaurantId": "9",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "pos": 8
         },
         {
             "restaurantId": "10",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
-        }
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "pos": 9
+        },
+        
+        
     ]
 
   const [expand, setExpand] = useState(true);
@@ -119,6 +132,19 @@ function RestaurantCards(){
     setOpen(true);
   };
 
+  const translations = [
+    "translate-x-[87.5em] translate-y-[25.5em]",
+    "translate-x-[70em] translate-y-[25.5em]",
+    "translate-x-[52.5em] translate-y-[25.5em]",
+    "translate-x-[35em] translate-y-[25.5em]",
+    "translate-x-[17.5em] translate-y-[25.5em]",
+    "translate-x-[87.5em]",
+    "translate-x-[70em]",
+    "translate-x-[52.5em]",
+    "translate-x-[35em]",
+    "translate-x-[17.5em]",
+  ]
+
   const handleClose = (send:boolean) => {
     if (send) {
         sendSelection(selected);
@@ -131,7 +157,7 @@ function RestaurantCards(){
           <div className="flex w-full pb-4">
               {
                   activeRestaurants.slice(0,5).map((activeRestaurant, index) => (
-                      <div onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && `translate-x-[100em] translate-y-[18em]`}`}>
+                      <div onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && translations[index]}`}>
                       <ResturantCard key={index} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"][0]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
                       </div>
                   ))
@@ -153,11 +179,14 @@ function RestaurantCards(){
           <div className="flex w-full">
             {
                   activeRestaurants.slice(5,10).map((activeRestaurant, index) => (
-                      <div  onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && `translate-x-[100em]`}`}>
+                      <div  onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && translations[index+5]}`}>
                         <ResturantCard key={index + 5} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"][0]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
                       </div>
                   ))
               }  
+              <div  onClick={()=>toggleSelection("1")} className={'z-10'}>
+                        <Deck/>
+                      </div>
           </div>
 
           <Dialog
