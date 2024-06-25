@@ -17,7 +17,6 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   const restaurantData = await getActiveRestaurants()
-  console.log("FETCHED DATA: ", restaurantData)
 
   return (
     <html lang="en">
