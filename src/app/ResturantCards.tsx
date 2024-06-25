@@ -133,11 +133,11 @@ function RestaurantCards(){
   };
 
   const translations = [
-    "translate-x-[87.5em] translate-y-[25.5em]",
-    "translate-x-[70em] translate-y-[25.5em]",
-    "translate-x-[52.5em] translate-y-[25.5em]",
-    "translate-x-[35em] translate-y-[25.5em]",
-    "translate-x-[17.5em] translate-y-[25.5em]",
+    "translate-x-[87.5em] translate-y-[24.5em]",
+    "translate-x-[70em] translate-y-[24.5em]",
+    "translate-x-[52.5em] translate-y-[24.5em]",
+    "translate-x-[35em] translate-y-[24.5em]",
+    "translate-x-[17.5em] translate-y-[24.5em]",
     "translate-x-[87.5em]",
     "translate-x-[70em]",
     "translate-x-[52.5em]",
