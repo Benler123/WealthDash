@@ -84,58 +84,9 @@ function RestaurantCards(){
             "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
         }
     ]
-    const resturants = [
-        "McDonalds",
-        "Burger King",
-        "KFC",
-        "Wendys",
-        "Taco Bell",
-        "Pizza Hut",
-        "Subway",
-        "Starbucks",
-        "Dunkin Donuts",
-        "Chipotle",
-    ]
-    const images = [
-        "download.jpeg",
-        "download.jpeg",
-        "download.jpeg",
-        "download.jpeg",
-        "download.jpeg",
-        "download.jpeg",
-        "download.jpeg",
-        "download.jpeg",
-        "download.jpeg",
-        "download.jpeg",
-    ]
-    const ratings = [
-        3.2,
-        4.5,
-        2.7,
-        4.1,
-        3.9,
-        4.3,
-        3.8,
-        4.0,
-        4.2,
-        4.4
-    ]
-    const cuisines = [
-        "Fast Food",
-        "Fast Food",
-        "Fast Food",
-        "Fast Food",
-        "Fast Food",
-        "Fast Food",
-        "Fast Food",
-        "Fast Food",
-        "Fast Food",
-        "Fast Food",
-    ]   
-
 
     const [expand, setExpand] = useState(false);
-  const [selected, setSelected] = useState(new Array(resturants.length).fill(false));
+  const [selected, setSelected] = useState(new Array(activeRestaurants.length).fill(false));
 
   const toggleSelection = (index: number) => {
     if (selected.filter((s) => s).length === 5 && !selected[index]) {
