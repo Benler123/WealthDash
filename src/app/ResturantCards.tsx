@@ -108,7 +108,7 @@ function RestaurantCards(){
         {
             activeRestaurants.slice(0,5).map((activeRestaurant, index) => (
                  <div onClick={()=>toggleSelection(index)} className={`transition ease-in-out w-auto ${expand && `translate-x-[100em] translate-y-[18em]`}`}>
-                <ResturantCard key={index} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"][0]} borderColor={selected[index]? selectedColor: wfColor}/>
+                <ResturantCard name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"][0]} borderColor={selected[index]? selectedColor: wfColor}/>
                 </div>
             ))
         }
@@ -117,7 +117,7 @@ function RestaurantCards(){
     <div className="flex w-full">{
             activeRestaurants.slice(5,10).map((activeRestaurant, index) => (
                 <div  onClick={()=>toggleSelection(index + 5)} className={`transition ease-in-out w-auto ${expand && `translate-x-[100em]`}`}>
-                <ResturantCard key={index} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"][0]} borderColor={selected[index]? selectedColor: wfColor}/>
+                <ResturantCard name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"][0]} borderColor={selected[index+5]? selectedColor: wfColor}/>
                 </div>
             ))
         }  
