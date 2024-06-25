@@ -11,11 +11,11 @@ export default function Home() {
   const [expand, setExpand] = useState(false)
   return (
     <main className="min-h-screen bg-white">
-      <div className="flex flex-col h-40 w-full">
-        <div className="relative mx-auto mt-5 h-24 w-80">
+      <div className="flex flex-col h-30 w-full">
+        <div className="relative mx-auto h-20 w-80">
           <Image fill={true} src="/1.png" objectFit="cover" alt="logo"></Image>
         </div>
-        <div className="relative mx-auto h-[4em] w-80 text-black">
+        <div className="relative mx-auto w-80 text-black">
           Week of:{" "}
         </div>
       </div>
