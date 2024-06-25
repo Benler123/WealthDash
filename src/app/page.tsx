@@ -3,6 +3,8 @@ import Image from "next/image";
 import CachedIcon from '@mui/icons-material/Cached';
 import React, { useState } from 'react';
 import exp from "constants";
+import ResturantCards from "./ResturantCards";
+import ResturantCard from "./components/ResturantCard";
 
 export default function Home() {
   const [expand, setExpand] = useState(false);
