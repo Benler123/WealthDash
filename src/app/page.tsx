@@ -16,26 +16,7 @@ export default function Home() {
         <div className="relative mx-auto mt-5 h-24 w-80"><Image fill={true} src="/1.png" objectFit="cover" alt="logo"></Image></div>
         <div className="relative mx-auto h-[4em] w-80 text-black">Week of: </div>
       </div>
-      <div className="flex flex-col justify-between h-[24em]">
-        <div className="flex flex-row w-full justify-between">
-          <div className={`transition ease-in-out w-auto ${expand && "translate-x-[88.5em] translate-y-[18em]"}`}><ResturantCard /></div>
-          <div className={`transition ease-in-out w-auto ${expand && "translate-x-[70.8em] translate-y-[18em]"}`}><ResturantCard /></div>
-          <div className={`transition ease-in-out w-auto ${expand && "translate-x-[53.1em] translate-y-[18em]"}`}><ResturantCard /></div>
-          <div className={`transition ease-in-out w-auto ${expand && "translate-x-[35.4em] translate-y-[18em]"}`}><ResturantCard /></div>
-          <div className={`transition ease-in-out w-auto ${expand && "translate-x-[17.7em] translate-y-[18em]"}`}><ResturantCard /></div>
-          {expand ? <div className="w-24 bg-indigo-500 text-5xl" onClick={() => setExpand(!expand)}>SUBMIT</div> : <div className="w-24 bg-indigo-500 text-5xl" onClick={() => setExpand(!expand)}>DRAW CARDS</div>}
-        </div>
-        <div className="flex flex-row h-auto w-full justify-between">
-          <div className={`transition ease-in-out w-auto ${expand && "translate-x-[88.5em]"}`}><ResturantCard /></div>
-          <div className={`transition ease-in-out w-auto ${expand && "translate-x-[70.8em]"}`}><ResturantCard /></div>
-          <div className={`transition ease-in-out w-auto ${expand && "translate-x-[53.1em]"}`}><ResturantCard /></div>
-          <div className={`transition ease-in-out w-auto ${expand && "translate-x-[35.4em]"}`}><ResturantCard /></div>
-          <div className={`transition ease-in-out w-auto ${expand && "translate-x-[17.7em]"}`}><ResturantCard /></div>
-          <div className="w-24 bg-indigo-500"></div>
-        </div>
-      </div>
-      
-      
+      <ResturantCards />            
     </main>
   );
 }
