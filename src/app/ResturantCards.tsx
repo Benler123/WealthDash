@@ -18,70 +18,80 @@ function RestaurantCards(){
             "name": "popeyes",
             "categories": ["Jamaican", "Fast Food"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "yelpUrl": "https://www.yelp.com/biz/popeyes-louisiana-kitchen-san-francisco-2?osq=Popeyes"
         },
         {
             "restaurantId": "2",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "yelpUrl": "https://www.yelp.com/biz/popeyes-louisiana-kitchen-san-francisco-2?osq=Popeyes"
         },
         {
             "restaurantId": "3",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "yelpUrl": "https://www.yelp.com/biz/popeyes-louisiana-kitchen-san-francisco-2?osq=Popeyes"
         },
         {
             "restaurantId": "4",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "yelpUrl": "https://www.yelp.com/biz/popeyes-louisiana-kitchen-san-francisco-2?osq=Popeyes"
         },
         {
             "restaurantId": "5",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "yelpUrl": "https://www.yelp.com/biz/popeyes-louisiana-kitchen-san-francisco-2?osq=Popeyes"
         },
         {
             "restaurantId": "6",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "yelpUrl": "https://www.yelp.com/biz/popeyes-louisiana-kitchen-san-francisco-2?osq=Popeyes"
         },
         {
             "restaurantId": "7",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "yelpUrl": "https://www.yelp.com/biz/popeyes-louisiana-kitchen-san-francisco-2?osq=Popeyes"
         },
         {
             "restaurantId": "8",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "yelpUrl": "https://www.yelp.com/biz/popeyes-louisiana-kitchen-san-francisco-2?osq=Popeyes"
         },
         {
             "restaurantId": "9",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "yelpUrl": "https://www.yelp.com/biz/popeyes-louisiana-kitchen-san-francisco-2?osq=Popeyes"
         },
         {
             "restaurantId": "10",
             "name": "popeyes",
             "categories": ["Jamaican"],
             "starRating": 3.5,
-            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"
+            "photoSrc": "https://tb-static.uber.com/prod/image-proc/processed_images/7f5f084a435fb7f3e8ef93d187e34642/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
+            "yelpUrl": "https://www.yelp.com/biz/popeyes-louisiana-kitchen-san-francisco-2?osq=Popeyes"
         }
     ]
 
@@ -132,7 +142,7 @@ function RestaurantCards(){
               {
                   activeRestaurants.slice(0,5).map((activeRestaurant, index) => (
                       <div onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && `translate-x-[100em] translate-y-[18em]`}`}>
-                      <ResturantCard key={index} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
+                      <ResturantCard key={activeRestaurant["restaurantId"]} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor} yelpUrl={activeRestaurant["yelpUrl"]}/>
                       </div>
                   ))
               }
@@ -154,7 +164,7 @@ function RestaurantCards(){
             {
                   activeRestaurants.slice(5,10).map((activeRestaurant, index) => (
                       <div  onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && `translate-x-[100em]`}`}>
-                        <ResturantCard key={index + 5} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
+                        <ResturantCard key={activeRestaurant["restaurantId"]} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor} yelpUrl={activeRestaurant["yelpUrl"]}/>
                       </div>
                   ))
               }  
@@ -184,4 +194,3 @@ function RestaurantCards(){
     )
   }
 export default RestaurantCards;
-
