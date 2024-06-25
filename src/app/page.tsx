@@ -9,6 +9,7 @@ import ResturantCard from './components/ResturantCard'
 
 export default function Home() {
   const [expand, setExpand] = useState(false);
+  const [submit, setSubmit] = useState(false);
   return (
     <main className="min-h-screen bg-white">
       <div className="flex flex-col h-40 w-full">
@@ -22,7 +23,7 @@ export default function Home() {
           <div className={`transition ease-in-out w-auto ${expand && "translate-x-[53.1em] translate-y-[18em]"}`}><ResturantCard /></div>
           <div className={`transition ease-in-out w-auto ${expand && "translate-x-[35.4em] translate-y-[18em]"}`}><ResturantCard /></div>
           <div className={`transition ease-in-out w-auto ${expand && "translate-x-[17.7em] translate-y-[18em]"}`}><ResturantCard /></div>
-          <div className="w-24 bg-indigo-500 text-5xl" onClick={() => setExpand(!expand)}><CachedIcon fontSize="inherit"/></div>
+          {expand ? <div className="w-24 bg-indigo-500 text-5xl" onClick={() => setExpand(!expand)}>SUBMIT</div> : <div className="w-24 bg-indigo-500 text-5xl" onClick={() => setExpand(!expand)}>DRAW CARDS</div>}
         </div>
         <div className="flex flex-row h-auto w-full justify-between">
           <div className={`transition ease-in-out w-auto ${expand && "translate-x-[88.5em]"}`}><ResturantCard /></div>
