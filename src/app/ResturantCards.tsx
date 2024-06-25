@@ -110,13 +110,17 @@ function RestaurantCards(){
 
   const [open, setOpen] = React.useState(false);
 
+  const [open2, setOpen2] = React.useState(false);
+
   const handleClickOpen = () => {
     setExpand(!expand);
     setOpen(true);
   };
 
   const handleClose = () => {
-    setOpen(false);
+    //replace with query call
+    setOpen2(true);
+    
   };
 
     return (
@@ -144,14 +148,21 @@ function RestaurantCards(){
           <Dialog
             open={open}
             keepMounted
-            onClose={handleClose}
             aria-describedby="alert-dialog-slide-description"
           >
             <DialogTitle>{"Confirm"}</DialogTitle>
             <DialogActions>
-              <Button onClick={handleClose}>No</Button>
+              <Button onClick={() => setOpen(false)}>No</Button>
               <Button onClick={handleClose}>Yes</Button>
             </DialogActions>
+          </Dialog>
+
+          <Dialog
+            open={open2}
+            keepMounted
+            aria-describedby="alert-dialog-slide-description"
+          >
+            <DialogTitle>{"SUBMITTED"}</DialogTitle>
           </Dialog>
       </div>
 
