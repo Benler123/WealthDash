@@ -31,7 +31,7 @@ function ResturantCard(props: ResturantCardProps) {
               alignItems: "center",
               flexDirection: "column",
             }}> 
-          <div style={{ fontFamily: 'Inter, sans-serif' }}>
+          <div style={{ fontFamily: 'Inter, sans-serif', fontWeight:'bold' }}>
             {props.name}
           </div>
           </Grid>
@@ -57,7 +57,7 @@ function ResturantCard(props: ResturantCardProps) {
               alignItems: "center",
               flexDirection: "column",
             }}> 
-          <div style={{ fontFamily: 'Inter, sans-serif' }}>
+          <div style={{ fontWeight:'bold', fontFamily: 'Inter, sans-serif', backgroundColor: 'lightgray', borderRadius: '8px', padding: '8px' }}>
             {props.cuisine}
           </div>
           </Grid>

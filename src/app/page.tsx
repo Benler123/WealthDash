@@ -5,6 +5,7 @@ import React, { useState } from "react"
 import exp from "constants"
 import ResturantCards from "./ResturantCards"
 import ResturantCard from "./components/ResturantCard"
+import Header from "./components/Header"
 // import RestaurantCard from "@/components/RestaurantCard";
 
 export default function Home() {
