@@ -128,7 +128,7 @@ function RestaurantCards(){
 
     return (
       <div className="flex w-full justify-between flex-col">
-          <div className="flex w-full pb-4">
+          <div className="flex w-full ">
               {
                   activeRestaurants.slice(0,5).map((activeRestaurant, index) => (
                       <div onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && `translate-x-[100em] translate-y-[18em]`}`}>
