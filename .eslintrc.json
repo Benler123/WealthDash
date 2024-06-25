@@ -1,3 +1,10 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["eslint:recommended", "plugin:standard/recommended"],
+  // Inherit your existing Next.js core-web-vitals rules
+  "overrides": [
+    {
+      "files": ["**/*.{js,jsx,ts,tsx}"],
+      "extends": ["next/core-web-vitals"]
+    }
+  ]
 }
