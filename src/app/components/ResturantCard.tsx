@@ -22,7 +22,7 @@ function ResturantCard(props: ResturantCardProps) {
   
   
     return (
-      <div className="shadow-lg transition-transform duration-200 ease-in-out hover:scale-105" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '16rem', height: '21rem', borderRadius: '0.4rem', border: `2px solid  ${props.borderColor}`, margin: '0.75rem'}}
+      <div className="shadow-lg transition-transform duration-200 ease-in-out hover:scale-105" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '16rem', height: '23rem', borderRadius: '1rem', border: `2px solid  ${props.borderColor}`, margin: '0.75rem'}}
       onClick={handleClick}>
         <Grid container  justifyContent="center"  spacing={1} sx={{ height: "100%" }}>
           <Grid item xs={12} sx={{
@@ -30,36 +30,37 @@ function ResturantCard(props: ResturantCardProps) {
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "column",
+              margin: "0.5rem",
             }}> 
-          <div style={{ fontFamily: 'Inter, sans-serif', fontWeight:'bold' }}>
-            {props.name}
-          </div>
-          </Grid>
-          <Grid item xs={12} sx={{
-              display: "flex",
-              justifyContent: "top",
-              alignItems: "center",
-              flexDirection: "column",
-            }}> 
-          <img src={props.imagePath} style={{ border: `2px solid  ${props.borderColor}` ,maxWidth: '100%', height: 'auto', objectFit: 'contain' }}/>         
-           </Grid>
-          <Grid item xs={12} sx={{
-              display: "flex",
-              justifyContent: "top",
-              alignItems: "center",
-              flexDirection: "column",
-            }}> 
-            <StarRating rating={props.rating} colorString={props.borderColor}/>
-          </Grid>
+            <div style={{ fontFamily: 'Inter, sans-serif', fontWeight:'bold' }}>
+              {props.name}
+            </div>
+            </Grid>
             <Grid item xs={12} sx={{
-              display: "flex",
-              justifyContent: "top",
-              alignItems: "center",
-              flexDirection: "column",
-            }}> 
-          <div style={{ fontWeight:'bold', fontFamily: 'Inter, sans-serif', backgroundColor: 'lightgray', borderRadius: '8px', padding: '8px' }}>
-            {props.cuisine}
-          </div>
+                display: "flex",
+                justifyContent: "top",
+                alignItems: "center",
+                flexDirection: "column",
+              }}> 
+            <img src={props.imagePath} style={{ border: `2px solid  ${props.borderColor}` , maxWidth: '80%', minWidth: '80%', maxHeight: '90%', minHeight: '90%', height: 'auto'}}/>         
+            </Grid>
+            <Grid item xs={12} sx={{
+                display: "flex",
+                justifyContent: "top",
+                alignItems: "center",
+                flexDirection: "column",
+              }}> 
+              <StarRating rating={props.rating} colorString={props.borderColor}/>
+            </Grid>
+              <Grid item xs={12} sx={{
+                display: "flex",
+                justifyContent: "top",
+                alignItems: "center",
+                flexDirection: "column",
+              }}> 
+            <div style={{ fontWeight:'bold', fontFamily: 'Inter, sans-serif', backgroundColor: 'lightgray', borderRadius: '8px', padding: '8px' }}>
+              {props.cuisine}
+            </div>
           </Grid>
         </Grid>
           
