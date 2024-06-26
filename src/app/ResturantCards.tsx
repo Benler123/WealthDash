@@ -18,6 +18,8 @@ function RestaurantCards() {
   const activeRestaurants = useData() || [];
 
   const [expand, setExpand] = useState(true)
+  const [expandDiscard, setExpandDiscard] = useState(false)
+  
   let dic: { [key: string]: boolean } = {}
   activeRestaurants.forEach((activeRestaurant) => {
     dic[activeRestaurant["name"]] = false
@@ -68,7 +70,8 @@ function RestaurantCards() {
 
   const handleClickOpen = () => {
     if (numSelected != 0) {
-        setExpand(true);
+        setExpandDiscard(true);
+        setExpand(true)
         setOpen2(true);
     }
   };
@@ -115,8 +118,8 @@ function RestaurantCards() {
         {activeRestaurants.slice(0, 5).map((activeRestaurant, index) => (
           <div
             onClick={() => toggleSelection(activeRestaurant["name"], index)}
-            className={`transition duration-1000 ease-in-out w-auto ${expand && translations[index]}`}
-            // className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index]}`}
+            // className={`transition duration-1000 ease-in-out w-auto ${expand && translations[index]}`}
+            className={`transition duration-1000 ease-in-out w-auto ${expand && (!selected[activeRestaurant["name"]] || expandDiscard) && translations[index]}`}
           >
             <ResturantCard
               name={activeRestaurant["name"]}
@@ -160,8 +163,8 @@ function RestaurantCards() {
         {activeRestaurants.slice(5, 10).map((activeRestaurant, index) => (
           <div
             onClick={() => toggleSelection(activeRestaurant["name"], index + 5)}
-            className={`transition duration-1000 ease-in-out w-auto ${expand && translations[index + 5]}`}
-            // className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index + 5]}`}
+            //className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["restaurantId"]] && translations[index + 5]}`}
+            className={`transition duration-1000 ease-in-out w-auto ${expand && (!selected[activeRestaurant["name"]] || expandDiscard) && translations[index + 5]}`}
           >
             <ResturantCard
               name={activeRestaurant["name"]}
