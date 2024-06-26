@@ -73,6 +73,7 @@ function RestaurantCards() {
         setExpandDiscard(true);
         setExpand(true)
         setOpen2(true);
+        handleClose(true)
     }
   };
 
