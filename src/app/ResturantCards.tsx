@@ -60,6 +60,19 @@ function RestaurantCards() {
    }
   }
 
+  const getSelection = () => {
+    try {
+      fetch("/api/vote", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        },
+      }).then((resp) => console.log(resp.json()));
+    } catch (error) {
+      throw new Error("Error submitting votes" + error)
+    }
+  }
+
   const selectedColor = "rgb(255, 215, 0)"
   const wfColor = "rgb(70,62,188)"
   const numSelected = Object.values(selected).filter((value) => value).length
@@ -190,6 +203,8 @@ function RestaurantCards() {
         <DialogTitle>{"Sent preference card to Miriam!"}</DialogTitle>
         <img src="/snoppy.gif"/>
       </Dialog>
+
+      <h1 onClick={getSelection}>Send email</h1>
     </div>
   )
 }
