@@ -77,6 +77,7 @@ function RestaurantCards() {
 
   const selectedColor = "rgb(255, 215, 0)"
   const wfColor = "rgb(70,62,188)"
+  const white = "rgb(255, 255, 255)"
   const numSelected = Object.values(selected).filter((value) => value).length
 
   const [open, setOpen] = React.useState(false)
@@ -161,7 +162,7 @@ function RestaurantCards() {
                 rating={activeRestaurant["starRating"]}
                 cuisine={activeRestaurant["categories"]}
                 borderColor={
-                  selected[activeRestaurant["name"]] ? selectedColor : wfColor
+                  selected[activeRestaurant["name"]] ? selectedColor : white
                 }
                 yelpUrl={activeRestaurant["yelpUrl"]}
               />
@@ -187,7 +188,7 @@ function RestaurantCards() {
                 rating={activeRestaurant["starRating"]}
                 cuisine={activeRestaurant["categories"]}
                 borderColor={
-                  selected[activeRestaurant["name"]] ? selectedColor : wfColor
+                  selected[activeRestaurant["name"]] ? selectedColor : white
                 }
                 yelpUrl={activeRestaurant["yelpUrl"]}
               />

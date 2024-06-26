@@ -74,3 +74,7 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .glowing {
+    box-shadow: 0 0 10px rgb(70,62,188);
+  }
