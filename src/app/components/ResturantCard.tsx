@@ -44,8 +44,8 @@ function ResturantCard(props: ResturantCardProps) {
                 justifyContent: "center",
                 alignItems: "center",
               }}> 
-              <div className='w-full h-48'>
-            <img src={props.imagePath} style={{ border: `2px solid  ${props.borderColor}` , width:'100%',height:'100%' , objectFit:'cover'}}/>         
+              <div className='flex w-full h-48 justify-center items-center'>
+            <img src={props.imagePath} style={{ border: `2px solid  ${props.borderColor}` , width:'90%',height:'90%' , objectFit:'cover'}}/>         
             </div>
             </Grid>
             <Grid item xs={12} sx={{
