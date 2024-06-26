@@ -1,6 +1,7 @@
 import React, { Component, act, useState } from 'react';
 import ResturantCard from './components/ResturantCard';
 import Deck from './components/Deck';
+import Discard from './components/Discard'
 import CachedIcon from '@mui/icons-material/Cached';
 import { IntegerType } from 'mongodb';
 import Dialog from '@mui/material/Dialog';
@@ -111,6 +112,8 @@ function RestaurantCards(){
     newSelected[restaurantId] = !newSelected[restaurantId]
     console.log(restaurantId)
     setSelected(newSelected)
+    const translations = trans;
+    translations[]
   };
 
   const sendSelection = (selected: { [key: string]: boolean}) => {
@@ -128,22 +131,26 @@ function RestaurantCards(){
   const [open2, setOpen2] = React.useState(false);
 
   const handleClickOpen = () => {
-    setExpand(!expand);
-    setOpen(true);
+    if (numSelected != 0) {
+        setExpand(!expand);
+        setOpen(true);
+    }
   };
 
-  const translations = [
-    "translate-x-[87.5em] translate-y-[24.5em]",
-    "translate-x-[70em] translate-y-[24.5em]",
-    "translate-x-[52.5em] translate-y-[24.5em]",
-    "translate-x-[35em] translate-y-[24.5em]",
-    "translate-x-[17.5em] translate-y-[24.5em]",
+  const translationsToDeck = [
     "translate-x-[87.5em]",
     "translate-x-[70em]",
     "translate-x-[52.5em]",
     "translate-x-[35em]",
     "translate-x-[17.5em]",
+    "translate-x-[87.5em] translate-y-[-24.5em]",
+    "translate-x-[70em] translate-y-[-24.5em]",
+    "translate-x-[52.5em] translate-y-[-24.5em]",
+    "translate-x-[35em] translate-y-[-24.5em]",
+    "translate-x-[17.5em] translate-y-[-24.5em]",
   ]
+
+  const [translations, setTranslations] = React.useState(translationsToDeck);
 
   const handleClose = (send:boolean) => {
     if (send) {
@@ -158,11 +165,14 @@ function RestaurantCards(){
               {
                   activeRestaurants.slice(0,5).map((activeRestaurant, index) => (
                       <div onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && translations[index]}`}>
-                      <ResturantCard key={index} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
+                      <ResturantCard name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
                       </div>
                   ))
               }
-              <div className="mt-[15em] ml-[2gem]">
+              <div  onClick={()=>setExpand(!expand)} className={'z-10'}>
+                        <Deck/>
+              </div>
+              {/* <div className="mt-[15em] ml-[2gem]">
                 {!expand ? 
                 <div>
                     <button onClick={handleClickOpen}>
@@ -174,19 +184,19 @@ function RestaurantCards(){
                         <img style={{ width: '60px', height: '60px' }} src="drawCard.svg"/>
                     </button>
                     </div>}
-                </div>
+                </div> */}
           </div>
           <div className="flex w-full">
             {
                   activeRestaurants.slice(5,10).map((activeRestaurant, index) => (
                       <div  onClick={()=>toggleSelection(activeRestaurant["restaurantId"])} className={`transition duration-1000 ease-in-out w-auto ${(expand && !selected[activeRestaurant["restaurantId"]]) && translations[index+5]}`}>
-                        <ResturantCard key={index + 5} name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
+                        <ResturantCard name={activeRestaurant["name"]} imagePath={activeRestaurant["photoSrc"]} rating={activeRestaurant["starRating"]} cuisine={activeRestaurant["categories"]} borderColor={selected[activeRestaurant["restaurantId"]]? selectedColor: wfColor}/>
                       </div>
                   ))
               }  
-              <div  onClick={()=>toggleSelection("1")} className={'z-10'}>
-                        <Deck/>
-                      </div>
+            <div onClick={handleClickOpen}>
+                        <Discard/>
+            </div>
           </div>
 
           <Dialog
