@@ -178,7 +178,6 @@ function RestaurantCards() {
         <DialogTitle>{"Confirm"}</DialogTitle>
         <DialogActions>
           <Button onClick={() => setOpen(false)}>No</Button>
-          <Button onClick={handleClose}>Yes</Button>
         </DialogActions>
       </Dialog>
 
