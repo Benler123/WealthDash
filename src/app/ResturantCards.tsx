@@ -91,11 +91,12 @@ function RestaurantCards() {
 
   return (
     <div className="flex w-full justify-between flex-col">
-      <div className="flex w-full ">
+      <div className="flex w-full">
+        <div className="flex w-5/6">
         {activeRestaurants.slice(0, 5).map((activeRestaurant, index) => (
           <div
             onClick={() => toggleSelection(activeRestaurant["name"])}
-            className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index]}`}
+            className={`flex transition duration-1000 ease-in-out w-full ${expand && !selected[activeRestaurant["name"]] && translations[index]}`}
           >
             <ResturantCard
               name={activeRestaurant["name"]}
@@ -111,35 +112,19 @@ function RestaurantCards() {
             />
           </div>
         ))}
-        <button onClick={() => setExpand(!expand)} className="z-10">
+        </div>
+        <button onClick={() => setExpand(!expand)} className="z-10 flex w-1/6">
             <Deck/>
         </button>
-        {/* <div className="mt-[15em] ml-[2gem]">
-          {!expand ? (
-            <div>
-              <button onClick={handleClickOpen}>
-                <ArrowCircleRightIcon
-                  style={{ width: "60px", height: "60px" }}
-                />
-              </button>
-            </div>
-          ) : (
-            <div>
-              <button onClick={() => setExpand(!expand)}>
-                <img
-                  style={{ width: "60px", height: "60px" }}
-                  src="drawCard.svg"
-                />
-              </button>
-            </div>
-          )}
-        </div> */}
+
+
       </div>
       <div className="flex w-full">
+        <div className="flex w-5/6">
         {activeRestaurants.slice(5, 10).map((activeRestaurant, index) => (
           <div
             onClick={() => toggleSelection(activeRestaurant["name"])}
-            className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index + 5]}`}
+            className={`flex transition duration-1000 ease-in-out w-full ${expand && !selected[activeRestaurant["name"]] && translations[index + 5]}`}
           >
             <ResturantCard
               name={activeRestaurant["name"]}
@@ -155,7 +140,8 @@ function RestaurantCards() {
             />
           </div>
         ))}
-        <button onClick={handleClickOpen}>
+        </div>
+        <button className="flex w-1/6" onClick={handleClickOpen}>
           <Discard />
         </button>
       </div>
@@ -177,7 +163,7 @@ function RestaurantCards() {
         keepMounted
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"Submitted order to Miriam!"}</DialogTitle>
+        <DialogTitle>{"Submitted Preferences to Miriam!"}</DialogTitle>
       </Dialog>
     </div>
   )

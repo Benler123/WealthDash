@@ -17,7 +17,7 @@ function Discard() {
   
   
     return (
-      <div className="shadow-lg transition-transform duration-200 ease-in-out hover:scale-105" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '16rem', height: '23rem', borderRadius: '1rem', border: `4px dashed ${wfColor}`, margin: '0.75rem'}}
+      <div className="flex shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 w-full" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '23rem', borderRadius: '1rem', border: `4px dashed ${wfColor}`, margin: '0.75rem'}}
       onClick={handleClick}>
         <Grid container  justifyContent="center">
             <Typography variant="h4" component="div" fontWeight="bold" fontFamily={"Inter"} color={wfColor}>

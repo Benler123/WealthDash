@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import { Star } from 'lucide-react';
 import StarRating from './StarRating';
 import { Inter } from "next/font/google";
+import Image from "next/image"
 
 
 function Deck() {
@@ -16,10 +17,10 @@ function Deck() {
   
   
     return (
-      <div className="shadow-lg transition-transform duration-200 ease-in-out hover:scale-105" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '16rem', height: '23rem', borderRadius: '1rem', border: `2px solid ${wfColor}`, backgroundColor: wfColor, margin: '0.75rem'}}
+      <div className="shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 w-full" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '23rem', borderRadius: '1rem', border: `2px solid ${wfColor}`, backgroundColor: wfColor, margin: '0.75rem'}}
       onClick={handleClick}>
         <Grid container  justifyContent="center">
-          <img src={"/wf.jpg"} style={{width: '100%', height: 'auto'}}/> 
+          <img src="/wf.jpg" style={{objectFit:'contain'}}/> 
         </Grid>
       </div>
       )
