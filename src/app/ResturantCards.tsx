@@ -37,7 +37,7 @@ function RestaurantCards() {
     console.log(restaurantNames)
   }
 
-  const selectedColor = "rgb(210, 169, 29)"
+  const selectedColor = "rgb(255, 215, 0)"
   const wfColor = "rgb(70,62,188)"
   const numSelected = Object.values(selected).filter((value) => value).length
 

@@ -23,7 +23,7 @@ function ResturantCard(props: ResturantCardProps) {
   
   
     return (
-      <div className="shadow-lg transition-transform duration-200 ease-in-out hover:scale-105" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '16rem', height: '23rem', borderRadius: '1rem', border: `2px solid  ${props.borderColor}`, margin: '0.75rem'}}
+      <div className={`shadow-lg transition-transform duration-200 ease-in-out ${isClicked ? 'scale-105' : 'hover:scale-105'}`} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '16rem', height: '23rem', borderRadius: '1rem', border: `2px solid  ${props.borderColor}`, margin: '0.75rem'}}
       onClick={handleClick}>
         <Grid container  justifyContent="center"  spacing={1} sx={{ height: "100%" }}>
           <Grid item xs={12} sx={{
@@ -73,8 +73,6 @@ function ResturantCard(props: ResturantCardProps) {
           </div>
           </Grid>
         </Grid>
-          
-        
       </div>
       )
   }
