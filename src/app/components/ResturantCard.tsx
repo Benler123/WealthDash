@@ -41,11 +41,12 @@ function ResturantCard(props: ResturantCardProps) {
             </Grid>
             <Grid item xs={12} sx={{
                 display: "flex",
-                justifyContent: "top",
+                justifyContent: "center",
                 alignItems: "center",
-                flexDirection: "column",
               }}> 
-            <img src={props.imagePath} style={{ border: `2px solid  ${props.borderColor}` , maxWidth: '80%', minWidth: '80%', maxHeight: '90%', minHeight: '90%', height: 'auto'}}/>         
+              <div className='flex w-full h-48 justify-center items-center'>
+            <img src={props.imagePath} style={{ border: `2px solid  ${props.borderColor}` , width:'90%',height:'90%' , objectFit:'cover'}}/>         
+            </div>
             </Grid>
             <Grid item xs={12} sx={{
                 display: "flex",

@@ -20,22 +20,22 @@ function RestaurantCards() {
   const [expand, setExpand] = useState(true)
   let dic: { [key: string]: boolean } = {}
   activeRestaurants.forEach((activeRestaurant) => {
-    dic[activeRestaurant["restaurantId"]] = false
+    dic[activeRestaurant["name"]] = false
   })
 
   const [selected, setSelected] = useState(dic)
 
-  const toggleSelection = (restaurantId: string) => {
+  const toggleSelection = (restaurantName: string) => {
     const newSelected = { ...selected }
-    newSelected[restaurantId] = !newSelected[restaurantId]
-    console.log(restaurantId)
+    newSelected[restaurantName] = !newSelected[restaurantName]
+    console.log(restaurantName)
     setSelected(newSelected)
   }
 
   const sendSelection = (selected: { [key: string]: boolean }) => {
-    const restaurantIds = Object.keys(selected).filter((key) => selected[key])
+    const restaurantNames = Object.keys(selected).filter((key) => selected[key])
     // /api/vote {"restaurantIds": restaurant}
-    console.log(restaurantIds)
+    console.log(restaurantNames)
   }
 
   const selectedColor = "rgb(210, 169, 29)"
@@ -80,20 +80,21 @@ function RestaurantCards() {
       <div className="flex w-full ">
         {activeRestaurants.slice(0, 5).map((activeRestaurant, index) => (
           <div
-            onClick={() => toggleSelection(activeRestaurant["restaurantId"])}
-            className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["restaurantId"]] && translations[index]}`}
+            onClick={() => toggleSelection(activeRestaurant["name"])}
+            className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index]}`}
           >
             <ResturantCard
               key={activeRestaurant["name"]}
               name={activeRestaurant["name"]}
-              imagePath={activeRestaurant["photoSrc"]}
+              imagePath={activeRestaurant["photoUrl"]}
               rating={activeRestaurant["starRating"]}
               cuisine={activeRestaurant["categories"]}
               borderColor={
-                selected[activeRestaurant["restaurantId"]]
+                selected[activeRestaurant["name"]]
                   ? selectedColor
                   : wfColor
               }
+            yelpUrl={activeRestaurant["yelpUrl"]}
             />
           </div>
         ))}
@@ -124,20 +125,21 @@ function RestaurantCards() {
       <div className="flex w-full">
         {activeRestaurants.slice(5, 10).map((activeRestaurant, index) => (
           <div
-            onClick={() => toggleSelection(activeRestaurant["restaurantId"])}
-            className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["restaurantId"]] && translations[index + 5]}`}
+            onClick={() => toggleSelection(activeRestaurant["name"])}
+            className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index + 5]}`}
           >
             <ResturantCard
               key={activeRestaurant["name"]}
               name={activeRestaurant["name"]}
-              imagePath={activeRestaurant["photoSrc"]}
+              imagePath={activeRestaurant["photoUrl"]}
               rating={activeRestaurant["starRating"]}
               cuisine={activeRestaurant["categories"]}
               borderColor={
-                selected[activeRestaurant["restaurantId"]]
+                selected[activeRestaurant["name"]]
                   ? selectedColor
                   : wfColor
               }
+              yelpUrl={activeRestaurant["yelpUrl"]}
             />
           </div>
         ))}
