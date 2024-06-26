@@ -203,8 +203,6 @@ function RestaurantCards() {
         <DialogTitle>{"Sent preference cards to Miriam!"}</DialogTitle>
         <img src="/snoppy.gif"/>
       </Dialog>
-
-      <h1 onClick={getSelection}>Send email</h1>
     </div>
   )
 }
