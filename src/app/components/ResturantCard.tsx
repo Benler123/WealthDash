@@ -11,6 +11,7 @@ interface ResturantCardProps {
   rating: number;
   borderColor: string;
   cuisine: string[];
+  yelpUrl: string;
 }
 
 function ResturantCard(props: ResturantCardProps) {
@@ -33,7 +34,9 @@ function ResturantCard(props: ResturantCardProps) {
               margin: "0.5rem",
             }}> 
             <div style={{ fontFamily: 'Inter, sans-serif', fontWeight:'bold' }}>
-              {props.name}
+              <a href={props.yelpUrl} target="_blank" style={{ color: 'black', textDecoration: 'none' }}>
+                {props.name}
+              </a>
             </div>
             </Grid>
             <Grid item xs={12} sx={{
