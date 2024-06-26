@@ -34,8 +34,22 @@ function RestaurantCards() {
 
   const sendSelection = (selected: { [key: string]: boolean }) => {
     const restaurantNames = Object.keys(selected).filter((key) => selected[key])
-    // /api/vote {"restaurantIds": restaurant}
-    console.log(restaurantNames)
+       const payload = {
+     restaurantNames: restaurantNames
+   }
+
+
+   try {
+    fetch("/api/vote", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json"
+       },
+       body: JSON.stringify(payload)
+     })
+   } catch (error) {
+     throw new Error("Error submitting votes" + error)
+   }
   }
 
   const selectedColor = "rgb(210, 169, 29)"
@@ -84,7 +98,6 @@ function RestaurantCards() {
             className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index]}`}
           >
             <ResturantCard
-              key={activeRestaurant["name"]}
               name={activeRestaurant["name"]}
               imagePath={activeRestaurant["photoUrl"]}
               rating={activeRestaurant["starRating"]}
@@ -129,7 +142,6 @@ function RestaurantCards() {
             className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index + 5]}`}
           >
             <ResturantCard
-              key={activeRestaurant["name"]}
               name={activeRestaurant["name"]}
               imagePath={activeRestaurant["photoUrl"]}
               rating={activeRestaurant["starRating"]}
@@ -143,7 +155,7 @@ function RestaurantCards() {
             />
           </div>
         ))}
-        <button onClick={handleClickOpen} className="z-10">
+        <button onClick={handleClickOpen}>
           <Discard />
         </button>
       </div>
