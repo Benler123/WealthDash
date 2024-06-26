@@ -44,7 +44,7 @@ function ResturantCard(props: ResturantCardProps) {
             <img 
               src={props.imagePath} 
               style={{
-                width: '15rem',
+                width: '22rem',
                 height: '100%',
                 objectFit: 'cover',
                 borderRadius: '1rem 1rem 0rem 0rem',
