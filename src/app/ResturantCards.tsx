@@ -48,8 +48,8 @@ function RestaurantCards() {
 
   const handleClickOpen = () => {
     if (numSelected != 0) {
-        setExpand(!expand);
-        setOpen(true);
+        setExpand(true);
+        setOpen2(true);
     }
   };
 
@@ -143,7 +143,7 @@ function RestaurantCards() {
             />
           </div>
         ))}
-        <button onClick={handleClickOpen} className="z-10">
+        <button onClick={handleClickOpen}>
           <Discard />
         </button>
       </div>
@@ -165,7 +165,7 @@ function RestaurantCards() {
         keepMounted
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"SUBMITTED"}</DialogTitle>
+        <DialogTitle>{"Submitted order to Miriam!"}</DialogTitle>
       </Dialog>
     </div>
   )
