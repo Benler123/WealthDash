@@ -1,5 +1,6 @@
 import React, { Component, act, useState } from "react"
 import ResturantCard from "./components/ResturantCard"
+import Discard from './components/Discard'
 import CachedIcon from "@mui/icons-material/Cached"
 import { IntegerType } from "mongodb"
 import Dialog from "@mui/material/Dialog"
@@ -33,8 +34,22 @@ function RestaurantCards() {
 
   const sendSelection = (selected: { [key: string]: boolean }) => {
     const restaurantNames = Object.keys(selected).filter((key) => selected[key])
-    // /api/vote {"restaurantIds": restaurant}
-    console.log(restaurantNames)
+       const payload = {
+     restaurantNames: restaurantNames
+   }
+
+
+   try {
+    fetch("/api/vote", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json"
+       },
+       body: JSON.stringify(payload)
+     })
+   } catch (error) {
+     throw new Error("Error submitting votes" + error)
+   }
   }
 
   const selectedColor = "rgb(255, 215, 0)"
@@ -46,22 +61,26 @@ function RestaurantCards() {
   const [open2, setOpen2] = React.useState(false)
 
   const handleClickOpen = () => {
-    setExpand(!expand)
-    setOpen(true)
-  }
+    if (numSelected != 0) {
+        setExpand(true);
+        setOpen2(true);
+    }
+  };
 
-  const translations = [
-    "translate-x-[87.5em] translate-y-[24.5em]",
-    "translate-x-[70em] translate-y-[24.5em]",
-    "translate-x-[52.5em] translate-y-[24.5em]",
-    "translate-x-[35em] translate-y-[24.5em]",
-    "translate-x-[17.5em] translate-y-[24.5em]",
+  const translationsToDeck = [
     "translate-x-[87.5em]",
     "translate-x-[70em]",
     "translate-x-[52.5em]",
     "translate-x-[35em]",
-    "translate-x-[17.5em]"
+    "translate-x-[17.5em]",
+    "translate-x-[87.5em] translate-y-[-24.5em]",
+    "translate-x-[70em] translate-y-[-24.5em]",
+    "translate-x-[52.5em] translate-y-[-24.5em]",
+    "translate-x-[35em] translate-y-[-24.5em]",
+    "translate-x-[17.5em] translate-y-[-24.5em]",
   ]
+
+  const [translations, setTranslations] = React.useState(translationsToDeck);
 
   const handleClose = (send: boolean) => {
     if (send) {
@@ -79,7 +98,6 @@ function RestaurantCards() {
             className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index]}`}
           >
             <ResturantCard
-              key={activeRestaurant["name"]}
               name={activeRestaurant["name"]}
               imagePath={activeRestaurant["photoUrl"]}
               rating={activeRestaurant["starRating"]}
@@ -93,7 +111,10 @@ function RestaurantCards() {
             />
           </div>
         ))}
-        <div className="mt-[15em] ml-[2gem]">
+        <button onClick={() => setExpand(!expand)} className="z-10">
+            <Deck/>
+        </button>
+        {/* <div className="mt-[15em] ml-[2gem]">
           {!expand ? (
             <div>
               <button onClick={handleClickOpen}>
@@ -112,7 +133,7 @@ function RestaurantCards() {
               </button>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
       <div className="flex w-full">
         {activeRestaurants.slice(5, 10).map((activeRestaurant, index) => (
@@ -121,7 +142,6 @@ function RestaurantCards() {
             className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index + 5]}`}
           >
             <ResturantCard
-              key={activeRestaurant["name"]}
               name={activeRestaurant["name"]}
               imagePath={activeRestaurant["photoUrl"]}
               rating={activeRestaurant["starRating"]}
@@ -135,9 +155,9 @@ function RestaurantCards() {
             />
           </div>
         ))}
-        <div onClick={() => toggleSelection("1")} className={"z-10"}>
-          <Deck />
-        </div>
+        <button onClick={handleClickOpen}>
+          <Discard />
+        </button>
       </div>
 
       <Dialog
@@ -157,7 +177,7 @@ function RestaurantCards() {
         keepMounted
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"SUBMITTED"}</DialogTitle>
+        <DialogTitle>{"Submitted order to Miriam!"}</DialogTitle>
       </Dialog>
     </div>
   )
