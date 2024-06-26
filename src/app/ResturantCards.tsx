@@ -77,29 +77,29 @@ function RestaurantCards() {
   };
 
   const translationsToDeck = [
-    "translate-x-[87.5em]",
-    "translate-x-[70em]",
-    "translate-x-[52.5em]",
-    "translate-x-[35em]",
-    "translate-x-[17.5em]",
-    "translate-x-[87.5em] translate-y-[-24.5em]",
-    "translate-x-[70em] translate-y-[-24.5em]",
-    "translate-x-[52.5em] translate-y-[-24.5em]",
-    "translate-x-[35em] translate-y-[-24.5em]",
-    "translate-x-[17.5em] translate-y-[-24.5em]",
+    "translate-x-[500%]",
+    "translate-x-[400%]",
+    "translate-x-[300%]",
+    "translate-x-[200%]",
+    "translate-x-[100%]",
+    "translate-x-[500%] translate-y-[-100%]",
+    "translate-x-[400%] translate-y-[-100%]",
+    "translate-x-[300%] translate-y-[-100%]",
+    "translate-x-[200%] translate-y-[-100%]",
+    "translate-x-[100%] translate-y-[-100%]",
   ]
 
   const translationsToDiscard = [
-    "translate-x-[87.5em] translate-y-[24.5em]",
-    "translate-x-[70em] translate-y-[24.5em]",
-    "translate-x-[52.5em] translate-y-[24.5em]",
-    "translate-x-[35em] translate-y-[24.5em]",
-    "translate-x-[17.5em] translate-y-[24.5em]",
-    "translate-x-[87.5em]",
-    "translate-x-[70em]",
-    "translate-x-[52.5em]",
-    "translate-x-[35em]",
-    "translate-x-[17.5em]",
+    "translate-x-[500%] translate-y-[100%]",
+    "translate-x-[400%] translate-y-[100%]",
+    "translate-x-[300%] translate-y-[100%]",
+    "translate-x-[200%] translate-y-[100%]",
+    "translate-x-[100%] translate-y-[100%]",
+    "translate-x-[500%]",
+    "translate-x-[400%]",
+    "translate-x-[300%]",
+    "translate-x-[200%]",
+    "translate-x-[100%]",
   ]
 
   const [translations, setTranslations] = React.useState(translationsToDeck);
@@ -120,7 +120,7 @@ function RestaurantCards() {
           <div
             onClick={() => toggleSelection(activeRestaurant["name"], index)}
             // className={`transition duration-1000 ease-in-out w-auto ${expand && translations[index]}`}
-            className={`flex transition duration-1000 ease-in-out w-full ${expand && !selected[activeRestaurant["name"]] && translations[index]}`}
+            className={`flex transition duration-1000 ease-in-out w-full ${expand && (!selected[activeRestaurant["name"]] || expandDiscard) && translations[index]}`}
           >
             <ResturantCard
               name={activeRestaurant["name"]}
@@ -148,7 +148,7 @@ function RestaurantCards() {
         {activeRestaurants.slice(5, 10).map((activeRestaurant, index) => (
           <div
             onClick={() => toggleSelection(activeRestaurant["name"], index + 5)}
-            className={`flex transition duration-1000 ease-in-out w-full ${expand && !selected[activeRestaurant["name"]] && translations[index + 5]}`}
+            className={`flex transition duration-1000 ease-in-out w-full ${expand && (!selected[activeRestaurant["name"]] || expandDiscard) && translations[index + 5]}`}
           >
             <ResturantCard
               name={activeRestaurant["name"]}
