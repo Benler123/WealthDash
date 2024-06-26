@@ -186,7 +186,8 @@ function RestaurantCards() {
         keepMounted
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"Submitted Preferences to Miriam!"}</DialogTitle>
+        <DialogTitle>{"Sent preference card to Miriam!"}</DialogTitle>
+        <img src="/snoppy.gif"/>
       </Dialog>
     </div>
   )
