@@ -25,10 +25,16 @@ function RestaurantCards() {
 
   const [selected, setSelected] = useState(dic)
 
-  const toggleSelection = (restaurantName: string) => {
+  const toggleSelection = (restaurantName: string, index: number) => {
     const newSelected = { ...selected }
     newSelected[restaurantName] = !newSelected[restaurantName]
-    console.log(restaurantName)
+    const newTranslations = { ...translations}
+    if (newSelected[restaurantName]) {
+      newTranslations[index] = translationsToDiscard[index]
+    } else {
+      newTranslations[index] = translationsToDeck[index]
+    }
+    setTranslations(newTranslations)
     setSelected(newSelected)
   }
 
@@ -66,10 +72,24 @@ function RestaurantCards() {
     "translate-x-[17.5em] translate-y-[-24.5em]",
   ]
 
+  const translationsToDiscard = [
+    "translate-x-[87.5em] translate-y-[24.5em]",
+    "translate-x-[70em] translate-y-[24.5em]",
+    "translate-x-[52.5em] translate-y-[24.5em]",
+    "translate-x-[35em] translate-y-[24.5em]",
+    "translate-x-[17.5em] translate-y-[24.5em]",
+    "translate-x-[87.5em]",
+    "translate-x-[70em]",
+    "translate-x-[52.5em]",
+    "translate-x-[35em]",
+    "translate-x-[17.5em]",
+  ]
+
   const [translations, setTranslations] = React.useState(translationsToDeck);
 
   const handleClose = (send: boolean) => {
     if (send) {
+      let newTranslations = translations
       sendSelection(selected)
     }
     setOpen2(true)
@@ -80,8 +100,9 @@ function RestaurantCards() {
       <div className="flex w-full ">
         {activeRestaurants.slice(0, 5).map((activeRestaurant, index) => (
           <div
-            onClick={() => toggleSelection(activeRestaurant["name"])}
-            className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index]}`}
+            onClick={() => toggleSelection(activeRestaurant["name"], index)}
+            className={`transition duration-1000 ease-in-out w-auto ${expand && translations[index]}`}
+            // className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index]}`}
           >
             <ResturantCard
               key={activeRestaurant["name"]}
@@ -125,8 +146,9 @@ function RestaurantCards() {
       <div className="flex w-full">
         {activeRestaurants.slice(5, 10).map((activeRestaurant, index) => (
           <div
-            onClick={() => toggleSelection(activeRestaurant["name"])}
-            className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index + 5]}`}
+            onClick={() => toggleSelection(activeRestaurant["name"], index + 5)}
+            className={`transition duration-1000 ease-in-out w-auto ${expand && translations[index + 5]}`}
+            // className={`transition duration-1000 ease-in-out w-auto ${expand && !selected[activeRestaurant["name"]] && translations[index + 5]}`}
           >
             <ResturantCard
               key={activeRestaurant["name"]}
