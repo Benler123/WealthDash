@@ -81,7 +81,7 @@ function RestaurantCards() {
             <ResturantCard
               key={activeRestaurant["name"]}
               name={activeRestaurant["name"]}
-              imagePath={activeRestaurant["photoSrc"]}
+              imagePath={activeRestaurant["photoUrl"]}
               rating={activeRestaurant["starRating"]}
               cuisine={activeRestaurant["categories"]}
               borderColor={
@@ -89,6 +89,7 @@ function RestaurantCards() {
                   ? selectedColor
                   : wfColor
               }
+            yelpUrl={activeRestaurant["yelpUrl"]}
             />
           </div>
         ))}
@@ -122,7 +123,7 @@ function RestaurantCards() {
             <ResturantCard
               key={activeRestaurant["name"]}
               name={activeRestaurant["name"]}
-              imagePath={activeRestaurant["photoSrc"]}
+              imagePath={activeRestaurant["photoUrl"]}
               rating={activeRestaurant["starRating"]}
               cuisine={activeRestaurant["categories"]}
               borderColor={
@@ -130,6 +131,7 @@ function RestaurantCards() {
                   ? selectedColor
                   : wfColor
               }
+              yelpUrl={activeRestaurant["yelpUrl"]}
             />
           </div>
         ))}
