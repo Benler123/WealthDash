@@ -9,7 +9,7 @@ import { DataProvider } from "@/app/DataContext"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "MiriamDash",
+  title: "WealthDash",
   description: "By The Wealthfront Interns of 2024"
 }
 
