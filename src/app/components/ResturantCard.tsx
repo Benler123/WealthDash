@@ -64,7 +64,7 @@ function ResturantCard(props: ResturantCardProps) {
             <div className="flex flex-row" style={{ fontFamily: 'Inter, sans-serif', fontWeight:'bold' }}>
           {props.cuisine.map((cuisine, index) => (
             <div className="p-1">
-              <div key={index} style={{backgroundColor: 'lightgray', borderRadius: '10px', padding: '2px' }}>
+              <div key={index} style={{backgroundColor: 'lightgray', borderRadius: '10px', padding: '2px' , paddingLeft: '5px', paddingRight: '5px'}}>
                 {cuisine}
               </div>
             </div>
